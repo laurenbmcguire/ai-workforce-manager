@@ -1,0 +1,20 @@
+# Synthetic workload definition. tasks.csv is generated from this file with a fixed seed.
+seed: 2026
+weeks: 8
+days_per_week: 5
+base_daily_volume: 50
+weekly_growth: 0.03
+
+# review_minutes: human approval effort; human_minutes: effort when a person does the task.
+task_types:
+  - { type: incident_triage,   weight: 0.20, required_skills: [ticket_triage, itsm_routing],         risk: low,       sla_hours: 4,  value: 18,  difficulty: 0.38, review_minutes: 3,  human_minutes: 10 }
+  - { type: access_request,    weight: 0.12, required_skills: [access_provisioning, policy_compliance], risk: medium,  sla_hours: 8,  value: 25,  difficulty: 0.42, review_minutes: 4,  human_minutes: 12 }
+  - { type: customer_reply,    weight: 0.13, required_skills: [customer_comms, ticket_triage],        risk: medium,    sla_hours: 8,  value: 22,  difficulty: 0.45, review_minutes: 4,  human_minutes: 12 }
+  - { type: meeting_summary,   weight: 0.12, required_skills: [summarization, action_extraction],     risk: low,       sla_hours: 8,  value: 15,  difficulty: 0.32, review_minutes: 4,  human_minutes: 20 }
+  - { type: kb_article,        weight: 0.07, required_skills: [technical_writing, summarization],     risk: low,       sla_hours: 48, value: 60,  difficulty: 0.52, review_minutes: 10, human_minutes: 45 }
+  - { type: data_quality_check, weight: 0.10, required_skills: [data_validation, sql],                risk: medium,    sla_hours: 24, value: 45,  difficulty: 0.55, review_minutes: 8,  human_minutes: 30 }
+  - { type: anomaly_report,    weight: 0.05, required_skills: [anomaly_detection, reporting],         risk: high,      sla_hours: 24, value: 80,  difficulty: 0.60, review_minutes: 12, human_minutes: 40 }
+  - { type: code_review,       weight: 0.09, required_skills: [code_review],                          risk: high,      sla_hours: 24, value: 70,  difficulty: 0.58, review_minutes: 12, human_minutes: 45 }
+  - { type: security_review,   weight: 0.03, required_skills: [code_review, security_review],         risk: regulated, sla_hours: 48, value: 120, difficulty: 0.66, review_minutes: 20, human_minutes: 60 }
+  - { type: vendor_comparison, weight: 0.04, required_skills: [vendor_compare, reporting],            risk: medium,    sla_hours: 72, value: 90,  difficulty: 0.55, review_minutes: 10, human_minutes: 60 }
+  - { type: contract_check,    weight: 0.05, required_skills: [contract_review, policy_compliance],   risk: regulated, sla_hours: 72, value: 150, difficulty: 0.62, review_minutes: 15, human_minutes: 60 }

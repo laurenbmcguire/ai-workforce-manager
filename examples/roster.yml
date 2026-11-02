@@ -1,0 +1,142 @@
+# AI Workforce roster (synthetic, fictional).
+# Every agent, person and number below is invented for this portfolio project.
+
+model_tiers:
+  # cost_per_task in USD (tokens + tool calls for one multi-step task),
+  # latency in minutes, quality_bonus is added to proficiency in the success model.
+  small:  { cost_per_task: 0.35, latency_minutes: 2,  quality_bonus: -0.04 }
+  medium: { cost_per_task: 1.40, latency_minutes: 6,  quality_bonus: 0.00 }
+  large:  { cost_per_task: 4.80, latency_minutes: 15, quality_bonus: 0.05 }
+
+autonomy_levels:
+  1: suggest-only
+  2: draft-for-approval
+  3: act-with-audit
+  4: fully autonomous
+
+supervisors:
+  - id: priya
+    name: Priya Raman
+    title: Service Desk Manager
+    review_hours_per_day: 3.0
+  - id: marcus
+    name: Marcus Hale
+    title: Engineering & Data Lead
+    review_hours_per_day: 3.5
+  - id: elena
+    name: Elena Ortiz
+    title: Risk & Compliance Lead
+    review_hours_per_day: 2.5
+
+agents:
+  - id: atlas
+    name: Atlas
+    role: Service Desk Triage Agent
+    model_tier: small
+    autonomy: 3
+    manager: priya
+    daily_capacity: 40
+    skills: { ticket_triage: 0.90, itsm_routing: 0.86, customer_comms: 0.66, access_provisioning: 0.55, policy_compliance: 0.50 }
+
+  - id: quill
+    name: Quill
+    role: Knowledge Base Writer
+    model_tier: medium
+    autonomy: 2
+    manager: priya
+    daily_capacity: 25
+    skills: { technical_writing: 0.88, summarization: 0.80, customer_comms: 0.78, action_extraction: 0.60, ticket_triage: 0.60 }
+
+  - id: sentinel
+    name: Sentinel
+    role: Data Quality Analyst
+    model_tier: medium
+    autonomy: 2
+    manager: marcus
+    daily_capacity: 25
+    skills: { data_validation: 0.92, sql: 0.90, anomaly_detection: 0.78, reporting: 0.68 }
+
+  - id: echo
+    name: Echo
+    role: Meeting Notes Agent
+    model_tier: small
+    autonomy: 4
+    manager: priya
+    daily_capacity: 40
+    skills: { summarization: 0.92, action_extraction: 0.90, technical_writing: 0.52 }
+
+  - id: vega
+    name: Vega
+    role: Code Review Agent
+    model_tier: large
+    autonomy: 2
+    manager: marcus
+    daily_capacity: 15
+    skills: { code_review: 0.95, security_review: 0.76, sql: 0.62, technical_writing: 0.50 }
+
+  - id: ledger
+    name: Ledger
+    role: Procurement Assistant
+    model_tier: medium
+    autonomy: 1
+    manager: elena
+    daily_capacity: 20
+    skills: { vendor_compare: 0.84, contract_review: 0.66, policy_compliance: 0.72, reporting: 0.58 }
+
+  - id: relay
+    name: Relay
+    role: Access Request Agent
+    model_tier: small
+    autonomy: 3
+    manager: priya
+    daily_capacity: 35
+    skills: { access_provisioning: 0.88, policy_compliance: 0.80, itsm_routing: 0.72, ticket_triage: 0.68 }
+
+  - id: mercury
+    name: Mercury
+    role: Email Drafting Agent (legacy pilot)
+    model_tier: small
+    autonomy: 3
+    manager: priya
+    daily_capacity: 30
+    skills: { customer_comms: 0.60, ticket_triage: 0.52, summarization: 0.55 }
+
+  - id: scout
+    name: Scout
+    role: Research Generalist Agent
+    model_tier: large
+    autonomy: 2
+    manager: marcus
+    daily_capacity: 15
+    skills:
+      summarization: 0.80
+      reporting: 0.78
+      technical_writing: 0.72
+      anomaly_detection: 0.62
+      vendor_compare: 0.64
+      code_review: 0.60
+      data_validation: 0.62
+      sql: 0.58
+      contract_review: 0.62
+      policy_compliance: 0.52
+      security_review: 0.45
+      action_extraction: 0.66
+
+policy:
+  # Minimum autonomy level an agent needs to act WITHOUT human approval, by task risk.
+  # 5 means "never without approval" (regulated work always gets a human sign-off).
+  autonomy_thresholds: { low: 3, medium: 3, high: 4, regulated: 5 }
+  escalation_confidence: 0.55     # agent confidence below this escalates to a human
+  confidence_noise_sd: 0.12       # how noisy the agent's self-reported confidence is
+  review_catch_rate: 0.85         # share of errors a fresh reviewer catches
+  fatigue_threshold: 0.85         # reviewer utilisation above which catch rate drops
+  fatigue_catch_drop: 0.20        # catch-rate drop for a fatigued reviewer (automation bias)
+  suggest_only_review_multiplier: 1.5  # level-1 agents need more human effort per review
+  audit_sample_rate: 0.10         # share of act-with-audit work sampled post hoc
+  audit_minutes: 3
+  review_turnaround_hours: 0.5
+  human_success_rate: 0.97        # escalations handled by a person
+  human_hourly_cost: 85.0
+  load_penalty: 8.0               # USD penalty at 100% of an agent's daily capacity
+  sla_miss_value_factor: 0.5      # value retained when a task misses its SLA
+  incident_cost: { low: 40, medium: 150, high: 600, regulated: 2500 }

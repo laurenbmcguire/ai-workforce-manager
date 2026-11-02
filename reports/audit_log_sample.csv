@@ -1,0 +1,201 @@
+seq,strategy,day,task_id,event,actor,detail
+0,cost_aware,0,T00005,route,atlas,strategy=cost_aware score=8.23 candidates=2
+1,cost_aware,0,T00005,auto_execute,atlas,autonomy L3 >= L3
+2,cost_aware,0,T00021,route,atlas,strategy=cost_aware score=16.92 candidates=2
+3,cost_aware,0,T00021,auto_execute,atlas,autonomy L3 >= L3
+4,cost_aware,0,T00000,route,echo,strategy=cost_aware score=12.65 candidates=3
+5,cost_aware,0,T00000,auto_execute,echo,autonomy L4 >= L3
+6,cost_aware,0,T00001,route,quill,strategy=cost_aware score=6.10 candidates=3
+7,cost_aware,0,T00001,hitl_hold,quill,autonomy L2 < L3 required for medium risk
+8,cost_aware,0,T00002,route,quill,strategy=cost_aware score=1.91 candidates=3
+9,cost_aware,0,T00002,hitl_hold,quill,autonomy L2 < L3 required for medium risk
+10,cost_aware,0,T00024,route,atlas,strategy=cost_aware score=7.22 candidates=2
+11,cost_aware,0,T00024,auto_execute,atlas,autonomy L3 >= L3
+12,cost_aware,0,T00007,route,relay,strategy=cost_aware score=8.91 candidates=2
+13,cost_aware,0,T00007,auto_execute,relay,autonomy L3 >= L3
+14,cost_aware,0,T00007,incident,relay,risk=medium cost=150
+15,cost_aware,0,T00012,route,echo,strategy=cost_aware score=12.18 candidates=3
+16,cost_aware,0,T00012,auto_execute,echo,autonomy L4 >= L3
+17,cost_aware,0,T00014,route,quill,strategy=cost_aware score=1.18 candidates=3
+18,cost_aware,0,T00014,hitl_hold,quill,autonomy L2 < L3 required for medium risk
+19,cost_aware,0,T00015,route,quill,strategy=cost_aware score=4.03 candidates=3
+20,cost_aware,0,T00015,hitl_hold,quill,autonomy L2 < L3 required for medium risk
+21,cost_aware,0,T00016,route,relay,strategy=cost_aware score=10.45 candidates=2
+22,cost_aware,0,T00016,auto_execute,relay,autonomy L3 >= L3
+23,cost_aware,0,T00016,incident,relay,risk=medium cost=150
+24,cost_aware,0,T00017,route,relay,strategy=cost_aware score=5.35 candidates=2
+25,cost_aware,0,T00017,auto_execute,relay,autonomy L3 >= L3
+26,cost_aware,0,T00018,route,echo,strategy=cost_aware score=15.71 candidates=3
+27,cost_aware,0,T00018,auto_execute,echo,autonomy L4 >= L3
+28,cost_aware,0,T00019,route,quill,strategy=cost_aware score=8.20 candidates=3
+29,cost_aware,0,T00019,hitl_hold,quill,autonomy L2 < L3 required for medium risk
+30,cost_aware,0,T00022,route,quill,strategy=cost_aware score=3.81 candidates=3
+31,cost_aware,0,T00022,hitl_hold,quill,autonomy L2 < L3 required for medium risk
+32,cost_aware,0,T00023,route,quill,strategy=cost_aware score=1.62 candidates=3
+33,cost_aware,0,T00023,hitl_hold,quill,autonomy L2 < L3 required for medium risk
+34,cost_aware,0,T00026,route,quill,strategy=cost_aware score=0.68 candidates=3
+35,cost_aware,0,T00026,hitl_hold,quill,autonomy L2 < L3 required for medium risk
+36,cost_aware,0,T00027,route,relay,strategy=cost_aware score=15.11 candidates=2
+37,cost_aware,0,T00027,auto_execute,relay,autonomy L3 >= L3
+38,cost_aware,0,T00027,incident,relay,risk=medium cost=150
+39,cost_aware,0,T00028,route,relay,strategy=cost_aware score=5.31 candidates=2
+40,cost_aware,0,T00028,auto_execute,relay,autonomy L3 >= L3
+41,cost_aware,0,T00032,route,quill,strategy=cost_aware score=9.19 candidates=3
+42,cost_aware,0,T00032,hitl_hold,quill,autonomy L2 < L3 required for medium risk
+43,cost_aware,0,T00034,route,echo,strategy=cost_aware score=8.59 candidates=3
+44,cost_aware,0,T00034,auto_execute,echo,autonomy L4 >= L3
+45,cost_aware,0,T00035,route,quill,strategy=cost_aware score=1.28 candidates=3
+46,cost_aware,0,T00035,hitl_hold,quill,autonomy L2 < L3 required for medium risk
+47,cost_aware,0,T00037,route,relay,strategy=cost_aware score=7.43 candidates=2
+48,cost_aware,0,T00037,auto_execute,relay,autonomy L3 >= L3
+49,cost_aware,0,T00039,route,relay,strategy=cost_aware score=13.00 candidates=2
+50,cost_aware,0,T00039,auto_execute,relay,autonomy L3 >= L3
+51,cost_aware,0,T00040,route,relay,strategy=cost_aware score=14.79 candidates=2
+52,cost_aware,0,T00040,auto_execute,relay,autonomy L3 >= L3
+53,cost_aware,0,T00003,route,vega,strategy=cost_aware score=27.36 candidates=2
+54,cost_aware,0,T00003,hitl_hold,vega,autonomy L2 < L4 required for high risk
+55,cost_aware,0,T00006,route,sentinel,strategy=cost_aware score=27.72 candidates=2
+56,cost_aware,0,T00006,hitl_hold,sentinel,autonomy L2 < L3 required for medium risk
+57,cost_aware,0,T00011,route,sentinel,strategy=cost_aware score=38.23 candidates=2
+58,cost_aware,0,T00011,hitl_hold,sentinel,autonomy L2 < L4 required for high risk
+59,cost_aware,0,T00013,route,vega,strategy=cost_aware score=48.29 candidates=2
+60,cost_aware,0,T00013,hitl_hold,vega,autonomy L2 < L4 required for high risk
+61,cost_aware,0,T00020,route,sentinel,strategy=cost_aware score=19.53 candidates=2
+62,cost_aware,0,T00020,hitl_hold,sentinel,autonomy L2 < L3 required for medium risk
+63,cost_aware,0,T00029,route,vega,strategy=cost_aware score=69.80 candidates=2
+64,cost_aware,0,T00029,hitl_hold,vega,autonomy L2 < L4 required for high risk
+65,cost_aware,0,T00030,route,vega,strategy=cost_aware score=40.10 candidates=2
+66,cost_aware,0,T00030,hitl_hold,vega,autonomy L2 < L4 required for high risk
+67,cost_aware,0,T00038,route,sentinel,strategy=cost_aware score=31.04 candidates=2
+68,cost_aware,0,T00038,hitl_hold,sentinel,autonomy L2 < L3 required for medium risk
+69,cost_aware,0,T00041,route,sentinel,strategy=cost_aware score=64.03 candidates=2
+70,cost_aware,0,T00041,hitl_hold,sentinel,autonomy L2 < L3 required for medium risk
+71,cost_aware,0,T00004,route,vega,strategy=cost_aware score=26.38 candidates=2
+72,cost_aware,0,T00004,hitl_hold,vega,autonomy L2 < L5 required for regulated risk
+73,cost_aware,0,T00010,route,quill,strategy=cost_aware score=44.50 candidates=3
+74,cost_aware,0,T00010,hitl_hold,quill,autonomy L2 < L3 required for low risk
+75,cost_aware,0,T00025,route,quill,strategy=cost_aware score=42.16 candidates=3
+76,cost_aware,0,T00025,hitl_hold,quill,autonomy L2 < L3 required for low risk
+77,cost_aware,0,T00031,route,echo,strategy=cost_aware score=23.07 candidates=3
+78,cost_aware,0,T00031,auto_execute,echo,autonomy L4 >= L3
+79,cost_aware,0,T00036,route,vega,strategy=cost_aware score=33.89 candidates=2
+80,cost_aware,0,T00036,hitl_hold,vega,autonomy L2 < L5 required for regulated risk
+81,cost_aware,0,T00008,route,ledger,strategy=cost_aware score=-96.39 candidates=2
+82,cost_aware,0,T00008,hitl_hold,ledger,autonomy L1 < L5 required for regulated risk
+83,cost_aware,0,T00009,route,scout,strategy=cost_aware score=16.02 candidates=2
+84,cost_aware,0,T00009,hitl_hold,scout,autonomy L2 < L3 required for medium risk
+85,cost_aware,0,T00033,route,scout,strategy=cost_aware score=39.70 candidates=2
+86,cost_aware,0,T00033,hitl_hold,scout,autonomy L2 < L3 required for medium risk
+87,cost_aware,0,T00001,review_reject,priya,error caught; rework 6 min
+88,cost_aware,0,T00002,review_approve,priya,output correct
+89,cost_aware,0,T00003,review_approve,marcus,output correct
+90,cost_aware,0,T00004,review_approve,marcus,output correct
+91,cost_aware,0,T00006,review_approve,marcus,output correct
+92,cost_aware,0,T00008,review_reject,elena,error caught; rework 30 min
+93,cost_aware,0,T00010,review_approve,priya,output correct
+94,cost_aware,0,T00009,review_approve,marcus,output correct
+95,cost_aware,0,T00011,review_approve,marcus,output correct
+96,cost_aware,0,T00014,review_approve,priya,output correct
+97,cost_aware,0,T00013,review_approve,marcus,output correct
+98,cost_aware,0,T00015,review_approve,priya,output correct
+99,cost_aware,0,T00019,review_reject,priya,error caught; rework 6 min
+100,cost_aware,0,T00020,review_approve,marcus,output correct
+101,cost_aware,0,T00022,review_approve,priya,output correct
+102,cost_aware,0,T00023,review_approve,priya,output correct
+103,cost_aware,0,T00025,review_approve,priya,output correct
+104,cost_aware,0,T00026,review_approve,priya,output correct
+105,cost_aware,0,T00029,review_approve,marcus,output correct
+106,cost_aware,0,T00030,review_approve,marcus,output correct
+107,cost_aware,0,T00032,review_approve,priya,output correct
+108,cost_aware,0,T00033,review_approve,marcus,output correct
+109,cost_aware,0,T00035,review_approve,priya,output correct
+110,cost_aware,0,T00036,review_approve,marcus,output correct
+111,cost_aware,0,T00038,review_approve,marcus,output correct
+112,cost_aware,0,T00040,audit_sample,priya,no issue
+113,cost_aware,1,T00043,route,atlas,strategy=cost_aware score=16.77 candidates=2
+114,cost_aware,1,T00043,auto_execute,atlas,autonomy L3 >= L3
+115,cost_aware,1,T00045,route,atlas,strategy=cost_aware score=9.44 candidates=2
+116,cost_aware,1,T00045,auto_execute,atlas,autonomy L3 >= L3
+117,cost_aware,1,T00055,route,atlas,strategy=cost_aware score=13.82 candidates=2
+118,cost_aware,1,T00055,auto_execute,atlas,autonomy L3 >= L3
+119,cost_aware,1,T00058,route,atlas,strategy=cost_aware score=10.89 candidates=2
+120,cost_aware,1,T00058,auto_execute,atlas,autonomy L3 >= L3
+121,cost_aware,1,T00058,incident,atlas,risk=low cost=40
+122,cost_aware,1,T00065,route,atlas,strategy=cost_aware score=7.52 candidates=2
+123,cost_aware,1,T00065,auto_execute,atlas,autonomy L3 >= L3
+124,cost_aware,1,T00047,route,relay,strategy=cost_aware score=20.59 candidates=2
+125,cost_aware,1,T00047,auto_execute,relay,autonomy L3 >= L3
+126,cost_aware,1,T00074,route,atlas,strategy=cost_aware score=12.07 candidates=2
+127,cost_aware,1,T00074,auto_execute,atlas,autonomy L3 >= L3
+128,cost_aware,1,T00052,route,relay,strategy=cost_aware score=10.78 candidates=2
+129,cost_aware,1,T00052,auto_execute,relay,autonomy L3 >= L3
+130,cost_aware,1,T00057,route,quill,strategy=cost_aware score=1.47 candidates=3
+131,cost_aware,1,T00057,hitl_hold,quill,autonomy L2 < L3 required for medium risk
+132,cost_aware,1,T00082,route,atlas,strategy=cost_aware score=14.07 candidates=2
+133,cost_aware,1,T00082,auto_execute,atlas,autonomy L3 >= L3
+134,cost_aware,1,T00059,route,echo,strategy=cost_aware score=12.10 candidates=3
+135,cost_aware,1,T00059,auto_execute,echo,autonomy L4 >= L3
+136,cost_aware,1,T00060,route,echo,strategy=cost_aware score=27.19 candidates=3
+137,cost_aware,1,T00060,auto_execute,echo,autonomy L4 >= L3
+138,cost_aware,1,T00087,route,atlas,strategy=cost_aware score=19.07 candidates=2
+139,cost_aware,1,T00087,auto_execute,atlas,autonomy L3 >= L3
+140,cost_aware,1,T00063,route,echo,strategy=cost_aware score=18.80 candidates=3
+141,cost_aware,1,T00063,auto_execute,echo,autonomy L4 >= L3
+142,cost_aware,1,T00066,route,relay,strategy=cost_aware score=5.51 candidates=2
+143,cost_aware,1,T00066,auto_execute,relay,autonomy L3 >= L3
+144,cost_aware,1,T00067,route,quill,strategy=cost_aware score=6.81 candidates=3
+145,cost_aware,1,T00067,hitl_hold,quill,autonomy L2 < L3 required for medium risk
+146,cost_aware,1,T00070,route,relay,strategy=cost_aware score=10.66 candidates=2
+147,cost_aware,1,T00070,auto_execute,relay,autonomy L3 >= L3
+148,cost_aware,1,T00075,route,relay,strategy=cost_aware score=9.01 candidates=2
+149,cost_aware,1,T00075,auto_execute,relay,autonomy L3 >= L3
+150,cost_aware,1,T00078,route,relay,strategy=cost_aware score=4.58 candidates=2
+151,cost_aware,1,T00078,auto_execute,relay,autonomy L3 >= L3
+152,cost_aware,1,T00079,route,echo,strategy=cost_aware score=10.41 candidates=3
+153,cost_aware,1,T00079,auto_execute,echo,autonomy L4 >= L3
+154,cost_aware,1,T00080,route,relay,strategy=cost_aware score=6.70 candidates=2
+155,cost_aware,1,T00080,auto_execute,relay,autonomy L3 >= L3
+156,cost_aware,1,T00081,route,quill,strategy=cost_aware score=-3.86 candidates=3
+157,cost_aware,1,T00081,hitl_hold,quill,autonomy L2 < L3 required for medium risk
+158,cost_aware,1,T00083,route,relay,strategy=cost_aware score=11.60 candidates=2
+159,cost_aware,1,T00083,auto_execute,relay,autonomy L3 >= L3
+160,cost_aware,1,T00084,route,relay,strategy=cost_aware score=7.84 candidates=2
+161,cost_aware,1,T00084,auto_execute,relay,autonomy L3 >= L3
+162,cost_aware,1,T00088,route,quill,strategy=cost_aware score=6.79 candidates=3
+163,cost_aware,1,T00088,hitl_hold,quill,autonomy L2 < L3 required for medium risk
+164,cost_aware,1,T00089,route,echo,strategy=cost_aware score=19.77 candidates=3
+165,cost_aware,1,T00089,auto_execute,echo,autonomy L4 >= L3
+166,cost_aware,1,T00091,route,echo,strategy=cost_aware score=8.55 candidates=3
+167,cost_aware,1,T00091,auto_execute,echo,autonomy L4 >= L3
+168,cost_aware,1,T00092,route,quill,strategy=cost_aware score=1.23 candidates=3
+169,cost_aware,1,T00092,hitl_hold,quill,autonomy L2 < L3 required for medium risk
+170,cost_aware,1,T00044,route,vega,strategy=cost_aware score=29.73 candidates=2
+171,cost_aware,1,T00044,hitl_hold,vega,autonomy L2 < L4 required for high risk
+172,cost_aware,1,T00046,route,vega,strategy=cost_aware score=40.22 candidates=2
+173,cost_aware,1,T00046,hitl_hold,vega,autonomy L2 < L4 required for high risk
+174,cost_aware,1,T00048,route,sentinel,strategy=cost_aware score=31.64 candidates=2
+175,cost_aware,1,T00048,hitl_hold,sentinel,autonomy L2 < L3 required for medium risk
+176,cost_aware,1,T00049,route,sentinel,strategy=cost_aware score=21.40 candidates=2
+177,cost_aware,1,T00049,hitl_hold,sentinel,autonomy L2 < L3 required for medium risk
+178,cost_aware,1,T00050,route,vega,strategy=cost_aware score=57.16 candidates=2
+179,cost_aware,1,T00050,hitl_hold,vega,autonomy L2 < L4 required for high risk
+180,cost_aware,1,T00054,route,sentinel,strategy=cost_aware score=37.28 candidates=2
+181,cost_aware,1,T00054,escalate,sentinel,confidence=0.53 < 0.55
+182,cost_aware,1,T00056,route,sentinel,strategy=cost_aware score=19.39 candidates=2
+183,cost_aware,1,T00056,hitl_hold,sentinel,autonomy L2 < L3 required for medium risk
+184,cost_aware,1,T00062,route,sentinel,strategy=cost_aware score=15.89 candidates=2
+185,cost_aware,1,T00062,hitl_hold,sentinel,autonomy L2 < L3 required for medium risk
+186,cost_aware,1,T00068,route,sentinel,strategy=cost_aware score=11.40 candidates=2
+187,cost_aware,1,T00068,hitl_hold,sentinel,autonomy L2 < L4 required for high risk
+188,cost_aware,1,T00069,route,sentinel,strategy=cost_aware score=17.80 candidates=2
+189,cost_aware,1,T00069,hitl_hold,sentinel,autonomy L2 < L3 required for medium risk
+190,cost_aware,1,T00071,route,sentinel,strategy=cost_aware score=3.75 candidates=2
+191,cost_aware,1,T00071,escalate,sentinel,confidence=0.38 < 0.55
+192,cost_aware,1,T00072,route,sentinel,strategy=cost_aware score=9.57 candidates=2
+193,cost_aware,1,T00072,hitl_hold,sentinel,autonomy L2 < L4 required for high risk
+194,cost_aware,1,T00073,route,sentinel,strategy=cost_aware score=3.84 candidates=2
+195,cost_aware,1,T00073,escalate,sentinel,confidence=0.47 < 0.55
+196,cost_aware,1,T00077,route,vega,strategy=cost_aware score=46.66 candidates=2
+197,cost_aware,1,T00077,hitl_hold,vega,autonomy L2 < L4 required for high risk
+198,cost_aware,1,T00053,route,echo,strategy=cost_aware score=18.99 candidates=3
+199,cost_aware,1,T00053,auto_execute,echo,autonomy L4 >= L3

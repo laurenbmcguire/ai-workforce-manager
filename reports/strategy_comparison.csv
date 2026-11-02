@@ -1,0 +1,4 @@
+strategy,tasks,completed,throughput_per_week,first_pass_quality,escalation_rate,approval_share,human_review_hours,model_cost,human_cost,cost_per_task,sla_attainment,incidents,incident_rate,incident_cost,value_delivered,net_value,reviewer_utilization,overtime_hours,peak_human_backlog,unfinished,sim_days,audits_performed
+round_robin,2156,2156,269.5,0.737,0.1331,0.449,382.1,4124.75,32477.79,16.98,0.8479,146,0.0677,37790.0,90370.65,15978.11,1.0108,22.7,44,0,42,20
+skill_based,2156,2156,269.5,0.8669,0.0371,0.4068,287.8,2877.25,24460.87,12.68,0.9995,111,0.0515,37650.0,97476.25,32488.12,0.7799,2.2,18,0,41,81
+cost_aware,2156,2156,269.5,0.8493,0.0445,0.4912,300.1,3116.5,25509.21,13.28,0.987,98,0.0455,33830.0,97019.9,34564.19,0.8133,3.8,16,0,41,47

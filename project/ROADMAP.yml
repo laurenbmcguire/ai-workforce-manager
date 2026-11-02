@@ -1,0 +1,74 @@
+project: ai-workforce-manager
+owner: Lauren McGuire
+
+milestones:
+  - id: M1
+    name: Roster schema and synthetic workload
+    due: 2026-09-18
+    status: done
+    done_criteria:
+      - roster.yml validated (skills 0-1, autonomy 1-4, managers exist)
+      - seeded 8-week task stream regenerates byte-identically
+  - id: M2
+    name: Routing engine (round-robin, skill-based, cost-aware)
+    due: 2026-10-02
+    status: done
+    done_criteria:
+      - three routers behind one interface
+      - cost-aware score formula covered by tests
+  - id: M3
+    name: Human-in-the-loop policy, escalation and audit log
+    due: 2026-10-16
+    status: done
+    done_criteria:
+      - autonomy x risk approval rule
+      - low-confidence escalation
+      - every decision written to the audit log
+  - id: M4
+    name: Simulation and KPIs
+    due: 2026-10-23
+    status: done
+    done_criteria:
+      - day-step simulation with reviewer capacity and fatigue
+      - per-agent and fleet KPIs, strategy comparison table
+  - id: M5
+    name: Performance reviews, RACI and capacity planning
+    due: 2026-10-30
+    status: done
+    done_criteria:
+      - rule-based review with evidence for every agent
+      - RACI matrix exported to Markdown
+      - supervisor hours forecast for next month
+  - id: M6
+    name: Live LLM agent adapter
+    due: 2026-12-11
+    status: planned
+    done_criteria:
+      - AgentAdapter interface that the simulator and a live agent both implement
+      - replayable fixtures so tests never call the network
+      - confidence calibration measured on live outputs
+  - id: M7
+    name: Workforce dashboard
+    due: 2027-01-29
+    status: planned
+    done_criteria:
+      - read-only dashboard over summary.json and the audit log
+      - drill-down from strategy to agent to audit events
+
+backlog:
+  - { id: B01, title: Roster YAML schema and validation, priority: P0, status: done, owner: Lauren, milestone: M1, depends_on: [] }
+  - { id: B02, title: Seeded workload generator, priority: P1, status: done, owner: AI PM, milestone: M1, depends_on: [] }
+  - { id: B03, title: Round-robin, skill-based and cost-aware routers, priority: P0, status: done, owner: Lauren, milestone: M2, depends_on: [B01] }
+  - { id: B04, title: Autonomy x risk approval rules, priority: P0, status: done, owner: Lauren, milestone: M3, depends_on: [B01] }
+  - { id: B05, title: Low-confidence escalation and audit log, priority: P0, status: done, owner: Lauren, milestone: M3, depends_on: [B04] }
+  - { id: B06, title: Day-step simulation with reviewer capacity and fatigue, priority: P0, status: done, owner: Lauren, milestone: M4, depends_on: [B03, B05] }
+  - { id: B07, title: KPI engine and strategy comparison, priority: P1, status: done, owner: AI PM, milestone: M4, depends_on: [B06] }
+  - { id: B08, title: Rule-based performance reviews with evidence, priority: P1, status: done, owner: Lauren, milestone: M5, depends_on: [B07] }
+  - { id: B09, title: RACI export and capacity plan, priority: P1, status: done, owner: AI PM, milestone: M5, depends_on: [B07] }
+  - { id: B10, title: AgentAdapter interface (simulated and live agents), priority: P1, status: todo, owner: Lauren, milestone: M6, depends_on: [B05] }
+  - { id: B11, title: Anthropic Messages API adapter with replay fixtures, priority: P1, status: todo, owner: Lauren, milestone: M6, depends_on: [B10] }
+  - { id: B12, title: Confidence calibration study for the escalation threshold, priority: P2, status: todo, owner: AI PM, milestone: M6, depends_on: [B06] }
+  - { id: B13, title: Model cost drift monitor per tier, priority: P1, status: todo, owner: AI PM, milestone: M6, depends_on: [B07] }
+  - { id: B14, title: Dashboard prototype over summary.json, priority: P2, status: todo, owner: Lauren, milestone: M7, depends_on: [B11] }
+  - { id: B15, title: Versioned policy-as-code for autonomy thresholds, priority: P2, status: todo, owner: Lauren, milestone: M7, depends_on: [B04, B14] }
+  - { id: B16, title: Reviewer fatigue sensitivity analysis, priority: P3, status: todo, owner: AI PM, milestone: M7, depends_on: [B06] }

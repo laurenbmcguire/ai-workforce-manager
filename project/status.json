@@ -1,0 +1,217 @@
+{
+  "date": "2026-11-02",
+  "project": "ai-workforce-manager",
+  "health": {
+    "rag": "AMBER",
+    "reason": "1 risk(s) scored >= 15 (R1); no milestone is overdue"
+  },
+  "milestones": [
+    {
+      "id": "M1",
+      "name": "Roster schema and synthetic workload",
+      "due": "2026-09-18",
+      "status": "done",
+      "pct_done": 100,
+      "overdue": false,
+      "done_criteria": [
+        "roster.yml validated (skills 0-1, autonomy 1-4, managers exist)",
+        "seeded 8-week task stream regenerates byte-identically"
+      ]
+    },
+    {
+      "id": "M2",
+      "name": "Routing engine (round-robin, skill-based, cost-aware)",
+      "due": "2026-10-02",
+      "status": "done",
+      "pct_done": 100,
+      "overdue": false,
+      "done_criteria": [
+        "three routers behind one interface",
+        "cost-aware score formula covered by tests"
+      ]
+    },
+    {
+      "id": "M3",
+      "name": "Human-in-the-loop policy, escalation and audit log",
+      "due": "2026-10-16",
+      "status": "done",
+      "pct_done": 100,
+      "overdue": false,
+      "done_criteria": [
+        "autonomy x risk approval rule",
+        "low-confidence escalation",
+        "every decision written to the audit log"
+      ]
+    },
+    {
+      "id": "M4",
+      "name": "Simulation and KPIs",
+      "due": "2026-10-23",
+      "status": "done",
+      "pct_done": 100,
+      "overdue": false,
+      "done_criteria": [
+        "day-step simulation with reviewer capacity and fatigue",
+        "per-agent and fleet KPIs, strategy comparison table"
+      ]
+    },
+    {
+      "id": "M5",
+      "name": "Performance reviews, RACI and capacity planning",
+      "due": "2026-10-30",
+      "status": "done",
+      "pct_done": 100,
+      "overdue": false,
+      "done_criteria": [
+        "rule-based review with evidence for every agent",
+        "RACI matrix exported to Markdown",
+        "supervisor hours forecast for next month"
+      ]
+    },
+    {
+      "id": "M6",
+      "name": "Live LLM agent adapter",
+      "due": "2026-12-11",
+      "status": "planned",
+      "pct_done": 0,
+      "overdue": false,
+      "done_criteria": [
+        "AgentAdapter interface that the simulator and a live agent both implement",
+        "replayable fixtures so tests never call the network",
+        "confidence calibration measured on live outputs"
+      ]
+    },
+    {
+      "id": "M7",
+      "name": "Workforce dashboard",
+      "due": "2027-01-29",
+      "status": "planned",
+      "pct_done": 0,
+      "overdue": false,
+      "done_criteria": [
+        "read-only dashboard over summary.json and the audit log",
+        "drill-down from strategy to agent to audit events"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "id": "R1",
+      "risk": "Automation bias - reviewers rubber-stamp agent output when overloaded",
+      "probability": 3,
+      "impact": 5,
+      "owner": "Lauren",
+      "mitigation": "Fatigue model lowers catch rate above 85% utilisation; capacity plan keeps reviewers below it; track missed errors per reviewer",
+      "status": "open",
+      "score": 15,
+      "heat": "High"
+    },
+    {
+      "id": "R2",
+      "risk": "Over-trusting autonomous agents (L3/L4 work ships without review)",
+      "probability": 3,
+      "impact": 4,
+      "owner": "Lauren",
+      "mitigation": "Autonomy promotions gated on evidence for exactly the work they unlock; audit sampling of act-with-audit work",
+      "status": "open",
+      "score": 12,
+      "heat": "Medium"
+    },
+    {
+      "id": "R3",
+      "risk": "Audit gaps when reviewer capacity runs out",
+      "probability": 3,
+      "impact": 4,
+      "owner": "AI PM",
+      "mitigation": "Skipped audit samples are logged as audit_skipped events and reported by the AI PM",
+      "status": "open",
+      "score": 12,
+      "heat": "Medium"
+    },
+    {
+      "id": "R4",
+      "risk": "Simulation-to-reality gap - synthetic proficiency and difficulty may not match live agents",
+      "probability": 4,
+      "impact": 3,
+      "owner": "Lauren",
+      "mitigation": "M6 live adapter with replayable fixtures; recalibrate proficiencies from observed outcomes",
+      "status": "open",
+      "score": 12,
+      "heat": "Medium"
+    },
+    {
+      "id": "R5",
+      "risk": "Model cost drift (price or token-usage changes per tier)",
+      "probability": 3,
+      "impact": 3,
+      "owner": "AI PM",
+      "mitigation": "Cost per task tracked per tier; B13 drift monitor; downgrade-tier reviews",
+      "status": "open",
+      "score": 9,
+      "heat": "Medium"
+    },
+    {
+      "id": "R6",
+      "risk": "Agent confidence is miscalibrated, so escalation fires too late or too often",
+      "probability": 3,
+      "impact": 3,
+      "owner": "AI PM",
+      "mitigation": "B12 calibration study; escalation threshold is policy config, not code",
+      "status": "open",
+      "score": 9,
+      "heat": "Medium"
+    },
+    {
+      "id": "R7",
+      "risk": "Accountability blur - more than one owner per task type",
+      "probability": 2,
+      "impact": 3,
+      "owner": "Lauren",
+      "mitigation": "RACI generator enforces exactly one Accountable per task type (tested)",
+      "status": "mitigated",
+      "score": 6,
+      "heat": "Low"
+    }
+  ],
+  "next_actions": [
+    {
+      "id": "B10",
+      "title": "AgentAdapter interface (simulated and live agents)",
+      "priority": "P1",
+      "owner": "Lauren",
+      "depends_on": [
+        "B05"
+      ]
+    },
+    {
+      "id": "B13",
+      "title": "Model cost drift monitor per tier",
+      "priority": "P1",
+      "owner": "AI PM",
+      "depends_on": [
+        "B07"
+      ]
+    },
+    {
+      "id": "B12",
+      "title": "Confidence calibration study for the escalation threshold",
+      "priority": "P2",
+      "owner": "AI PM",
+      "depends_on": [
+        "B06"
+      ]
+    }
+  ],
+  "backlog_open": 7,
+  "backlog_total": 16,
+  "data_says": [
+    "Cost-aware skill-based routing has the highest net value ($34,564) vs round-robin ($15,978): first-pass quality 84.9% vs 73.7%, incidents 98 vs 146.",
+    "Deployed strategy: $13.28 per task fully loaded, SLA attainment 98.7%, reviewers at 81% of capacity.",
+    "Performance reviews: downgrade model tier 1 (Vega), increase autonomy 1 (Sentinel), retire 1 (Mercury), retrain / prompt-tune 2 (Ledger, Scout), keep 4.",
+    "Next month needs 204 supervisor hours vs 180 available (113%); 185 h if autonomy recommendations are applied.",
+    "Audit gap: 11 post-hoc audit samples were skipped for lack of reviewer capacity."
+  ],
+  "change_log": "2026-11-02: status refreshed from the latest pipeline run. Deployed routing = cost_aware (net value $34,564); capacity plan 204 h needed / 180 h available. Health AMBER.",
+  "executive_summary": "Health is AMBER: 1 risk(s) scored >= 15 (R1); no milestone is overdue. 5 of 7 milestones are done and 7 of 16 backlog items remain open. Cost-aware skill-based routing has the highest net value ($34,564) vs round-robin ($15,978): first-pass quality 84.9% vs 73.7%, incidents 98 vs 146. Top risk: R1 Automation bias - reviewers rubber-stamp agent output when overloaded (score 15). Next actions: B10 AgentAdapter interface (simulated and live agents), B13 Model cost drift monitor per tier, B12 Confidence calibration study for the escalation threshold.",
+  "summary_source": "template"
+}

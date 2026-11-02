@@ -1,0 +1,50 @@
+risks:
+  - id: R1
+    risk: Automation bias - reviewers rubber-stamp agent output when overloaded
+    probability: 3
+    impact: 5
+    owner: Lauren
+    mitigation: Fatigue model lowers catch rate above 85% utilisation; capacity plan keeps reviewers below it; track missed errors per reviewer
+    status: open
+  - id: R2
+    risk: Over-trusting autonomous agents (L3/L4 work ships without review)
+    probability: 3
+    impact: 4
+    owner: Lauren
+    mitigation: Autonomy promotions gated on evidence for exactly the work they unlock; audit sampling of act-with-audit work
+    status: open
+  - id: R3
+    risk: Audit gaps when reviewer capacity runs out
+    probability: 3
+    impact: 4
+    owner: AI PM
+    mitigation: Skipped audit samples are logged as audit_skipped events and reported by the AI PM
+    status: open
+  - id: R4
+    risk: Simulation-to-reality gap - synthetic proficiency and difficulty may not match live agents
+    probability: 4
+    impact: 3
+    owner: Lauren
+    mitigation: M6 live adapter with replayable fixtures; recalibrate proficiencies from observed outcomes
+    status: open
+  - id: R5
+    risk: Model cost drift (price or token-usage changes per tier)
+    probability: 3
+    impact: 3
+    owner: AI PM
+    mitigation: Cost per task tracked per tier; B13 drift monitor; downgrade-tier reviews
+    status: open
+  - id: R6
+    risk: Agent confidence is miscalibrated, so escalation fires too late or too often
+    probability: 3
+    impact: 3
+    owner: AI PM
+    mitigation: B12 calibration study; escalation threshold is policy config, not code
+    status: open
+  - id: R7
+    risk: Accountability blur - more than one owner per task type
+    probability: 2
+    impact: 3
+    owner: Lauren
+    mitigation: RACI generator enforces exactly one Accountable per task type (tested)
+    status: mitigated
