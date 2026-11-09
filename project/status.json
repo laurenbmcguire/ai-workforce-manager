@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-03",
+  "date": "2026-11-09",
   "project": "ai-workforce-manager",
   "health": {
     "rag": "AMBER",
@@ -211,7 +211,7 @@
     "Next month needs 204 supervisor hours vs 180 available (113%); 185 h if autonomy recommendations are applied.",
     "Audit gap: 11 post-hoc audit samples were skipped for lack of reviewer capacity."
   ],
-  "change_log": "2026-11-03: status refreshed from the latest pipeline run. Deployed routing = cost_aware (net value $34,564); capacity plan 204 h needed / 180 h available. Health AMBER.",
+  "change_log": "2026-11-09: status refreshed from the latest pipeline run. Deployed routing = cost_aware (net value $34,564); capacity plan 204 h needed / 180 h available. Health AMBER.",
   "executive_summary": "Health is AMBER: 1 risk(s) scored >= 15 (R1); no milestone is overdue. 5 of 7 milestones are done and 7 of 16 backlog items remain open. Cost-aware skill-based routing has the highest net value ($34,564) vs round-robin ($15,978): first-pass quality 84.9% vs 73.7%, incidents 98 vs 146. Top risk: R1 Automation bias - reviewers rubber-stamp agent output when overloaded (score 15). Next actions: B10 AgentAdapter interface (simulated and live agents), B13 Model cost drift monitor per tier, B12 Confidence calibration study for the escalation threshold.",
   "summary_source": "template"
 }
